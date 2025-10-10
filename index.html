@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투두리스트 앱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 50%, #ffa8a8 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            animation: logoFloat 3s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .todo-input-section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .todo-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .todo-input:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .add-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 16px;
+            border: 2px solid #e1e5e9;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background: #4facfe;
+            color: white;
+            border-color: #4facfe;
+        }
+
+        .todo-list {
+            padding: 30px;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .todo-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .todo-item.completed {
+            opacity: 0.6;
+            border-left-color: #28a745;
+        }
+
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+        }
+
+        .todo-item.high-priority {
+            border-left-color: #dc3545;
+        }
+
+        .todo-item.medium-priority {
+            border-left-color: #ffc107;
+        }
+
+        .todo-item.low-priority {
+            border-left-color: #17a2b8;
+        }
+
+        .todo-checkbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .todo-text {
+            flex: 1;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .todo-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .priority-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .priority-high {
+            background: #dc3545;
+            color: white;
+        }
+
+        .priority-medium {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .priority-low {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .delete-btn {
+            padding: 8px 15px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
+            transform: scale(1.05);
+        }
+
+        .stats {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            color: #666;
+        }
+
+        .empty-state img {
+            width: 100px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .filter-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .todo-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .todo-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <div class="logo">✓</div>
+                투두리스트
+            </h1>
+            <p>할 일을 체계적으로 관리하세요</p>
+        </div>
+
+        <div class="todo-input-section">
+            <div class="input-group">
+                <input type="text" id="todoInput" class="todo-input" placeholder="새로운 할 일을 입력하세요..." maxlength="100">
+                <button id="addBtn" class="add-btn">추가</button>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="pending">진행중</button>
+                <button class="filter-btn" data-filter="completed">완료</button>
+                <button class="filter-btn" data-filter="high">높음</button>
+                <button class="filter-btn" data-filter="medium">보통</button>
+                <button class="filter-btn" data-filter="low">낮음</button>
+            </div>
+        </div>
+
+        <div class="todo-list" id="todoList">
+            <div class="empty-state">
+                <div style="font-size: 4rem; margin-bottom: 20px;">📋</div>
+                <h3>아직 할 일이 없습니다</h3>
+                <p>위에서 새로운 할 일을 추가해보세요!</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalCount">0</div>
+                <div class="stat-label">전체</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="pendingCount">0</div>
+                <div class="stat-label">진행중</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="completedCount">0</div>
+                <div class="stat-label">완료</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TodoApp {
+            constructor() {
+                this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+                this.currentFilter = 'all';
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.render();
+                this.updateStats();
+            }
+
+            bindEvents() {
+                const todoInput = document.getElementById('todoInput');
+                const addBtn = document.getElementById('addBtn');
+                const filterBtns = document.querySelectorAll('.filter-btn');
+
+                // 할 일 추가
+                addBtn.addEventListener('click', () => this.addTodo());
+                todoInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.addTodo();
+                });
+
+                // 필터 버튼
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.setFilter(e.target.dataset.filter);
+                    });
+                });
+            }
+
+            addTodo() {
+                const input = document.getElementById('todoInput');
+                const text = input.value.trim();
+                
+                if (!text) {
+                    alert('할 일을 입력해주세요!');
+                    return;
+                }
+
+                const todo = {
+                    id: Date.now(),
+                    text: text,
+                    completed: false,
+                    priority: 'medium',
+                    createdAt: new Date().toISOString()
+                };
+
+                this.todos.unshift(todo);
+                input.value = '';
+                this.saveTodos();
+                this.render();
+                this.updateStats();
+            }
+
+            toggleTodo(id) {
+                const todo = this.todos.find(t => t.id === id);
+                if (todo) {
+                    todo.completed = !todo.completed;
+                    this.saveTodos();
+                    this.render();
+                    this.updateStats();
+                }
+            }
+
+            deleteTodo(id) {
+                if (confirm('정말 삭제하시겠습니까?')) {
+                    this.todos = this.todos.filter(t => t.id !== id);
+                    this.saveTodos();
+                    this.render();
+                    this.updateStats();
+                }
+            }
+
+            setPriority(id, priority) {
+                const todo = this.todos.find(t => t.id === id);
+                if (todo) {
+                    todo.priority = priority;
+                    this.saveTodos();
+                    this.render();
+                }
+            }
+
+            setFilter(filter) {
+                this.currentFilter = filter;
+                
+                // 필터 버튼 활성화 상태 업데이트
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+                
+                this.render();
+            }
+
+            getFilteredTodos() {
+                switch (this.currentFilter) {
+                    case 'pending':
+                        return this.todos.filter(t => !t.completed);
+                    case 'completed':
+                        return this.todos.filter(t => t.completed);
+                    case 'high':
+                        return this.todos.filter(t => t.priority === 'high');
+                    case 'medium':
+                        return this.todos.filter(t => t.priority === 'medium');
+                    case 'low':
+                        return this.todos.filter(t => t.priority === 'low');
+                    default:
+                        return this.todos;
+                }
+            }
+
+            render() {
+                const todoList = document.getElementById('todoList');
+                const filteredTodos = this.getFilteredTodos();
+
+                if (filteredTodos.length === 0) {
+                    todoList.innerHTML = `
+                        <div class="empty-state">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">📋</div>
+                            <h3>${this.getEmptyMessage()}</h3>
+                            <p>${this.getEmptySubMessage()}</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                todoList.innerHTML = filteredTodos.map(todo => `
+                    <div class="todo-item ${todo.completed ? 'completed' : ''} ${todo.priority}-priority">
+                        <input type="checkbox" class="todo-checkbox" ${todo.completed ? 'checked' : ''} 
+                               onchange="todoApp.toggleTodo(${todo.id})">
+                        <div class="todo-text">${this.escapeHtml(todo.text)}</div>
+                        <div class="todo-actions">
+                            <select class="priority-btn" onchange="todoApp.setPriority(${todo.id}, this.value)">
+                                <option value="low" ${todo.priority === 'low' ? 'selected' : ''}>낮음</option>
+                                <option value="medium" ${todo.priority === 'medium' ? 'selected' : ''}>보통</option>
+                                <option value="high" ${todo.priority === 'high' ? 'selected' : ''}>높음</option>
+                            </select>
+                            <button class="delete-btn" onclick="todoApp.deleteTodo(${todo.id})">삭제</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            getEmptyMessage() {
+                switch (this.currentFilter) {
+                    case 'pending':
+                        return '진행중인 할 일이 없습니다';
+                    case 'completed':
+                        return '완료된 할 일이 없습니다';
+                    case 'high':
+                        return '높은 우선순위 할 일이 없습니다';
+                    case 'medium':
+                        return '보통 우선순위 할 일이 없습니다';
+                    case 'low':
+                        return '낮은 우선순위 할 일이 없습니다';
+                    default:
+                        return '아직 할 일이 없습니다';
+                }
+            }
+
+            getEmptySubMessage() {
+                switch (this.currentFilter) {
+                    case 'pending':
+                        return '새로운 할 일을 추가해보세요!';
+                    case 'completed':
+                        return '할 일을 완료해보세요!';
+                    case 'high':
+                        return '중요한 할 일을 추가해보세요!';
+                    case 'medium':
+                        return '보통 우선순위 할 일을 추가해보세요!';
+                    case 'low':
+                        return '낮은 우선순위 할 일을 추가해보세요!';
+                    default:
+                        return '위에서 새로운 할 일을 추가해보세요!';
+                }
+            }
+
+            updateStats() {
+                const total = this.todos.length;
+                const completed = this.todos.filter(t => t.completed).length;
+                const pending = total - completed;
+
+                document.getElementById('totalCount').textContent = total;
+                document.getElementById('pendingCount').textContent = pending;
+                document.getElementById('completedCount').textContent = completed;
+            }
+
+            saveTodos() {
+                localStorage.setItem('todos', JSON.stringify(this.todos));
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
+
+        // 앱 초기화
+        const todoApp = new TodoApp();
+    </script>
+</body>
+</html>
