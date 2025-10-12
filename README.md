@@ -19,7 +19,7 @@
 
 ## 🚀 프로젝트 시작하기
 
-
+```bash
 # 저장소 클론
 git clone [저장소URL] ecodoobiz
 cd ecodoobiz
@@ -103,7 +103,7 @@ git rm filename                # 파일 삭제
 git mv old new                 # 파일 이름 변경
 git stash                      # 임시 저장
 git stash pop                  # 복원
-✍️ 문서 작성 규칙
+## ✍️ 문서 작성 규칙
 파일명 규칙
 
 영어 소문자 + _
@@ -137,7 +137,7 @@ markdown
 
 ## 참고자료
 - [Pro Git Book](https://git-scm.com/book)
-🔄 워크플로우
+## 🔄 워크플로우
 새 문서 작성
 bash
 코드 복사
@@ -162,7 +162,7 @@ git checkout main
 git pull origin main
 git checkout [개인브랜치]
 git merge main
-🧯 문제 해결 가이드
+## 🧯 문제 해결 가이드
 커밋을 잘못했을 때
 
 bash
@@ -188,7 +188,7 @@ git rebase --continue
 bash
 코드 복사
 git checkout HEAD -- filename
-🧰 추천 도구
+## 🧰 추천 도구
 VS Code 확장
 
 Markdown All in One
@@ -211,7 +211,7 @@ git config --global alias.ci commit
 # 사용 예시
 git st   # git status
 git co main
-🔗 참고 자료
+## 🔗 참고 자료
 Git 공식 문서
 
 GitHub 가이드
