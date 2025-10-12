@@ -5,24 +5,6 @@
 
 ---
 
-## 📁 프로젝트 구조
-
-```
-ecodoobiz/
-├── deadrabbit07/           # 개발 관련 문서
-│   ├── claude_prompt.md    # Claude AI 프롬프트 (Odoo 개발용)
-│   ├── gpt_prompt.md       # GPT 프롬프트 (Odoo 개발용)
-│   ├── using_ai.md         # AI 도구 사용법 정리
-│   └── vi_commands.md      # Vi/Vim 명령어 정리
-├── kwonhj0510/             # 개인 문서
-│   └── example.md          # 예시 문서
-├── minjun824/              # 개인 문서
-│   └── gpt_prompt          # 프롬프트 파일
-└── README.md               # 프로젝트 메인 문서
-```
-
----
-
 ## 🚀 빠른 시작 가이드
 
 ### 1. 프로젝트 클론 및 설정
@@ -438,23 +420,6 @@ git push origin [개인브랜치]
 
 ---
 
-## 📚 각 폴더별 문서 가이드
-
-### deadrabbit07/ (개발 관련)
-- **claude_prompt.md**: Claude AI 프롬프트 (Odoo 개발용)
-- **gpt_prompt.md**: GPT 프롬프트 (Odoo 개발용)  
-- **using_ai.md**: AI 도구 사용법 정리
-- **vi_commands.md**: Vi/Vim 명령어 정리
-
-### kwonhj0510/ (개인 문서)
-- 자유롭게 개인 학습 내용 정리
-- 예시: `example.md`
-
-### minjun824/ (개인 문서)
-- 자유롭게 개인 학습 내용 정리
-- 예시: `gpt_prompt`
-
----
 
 ## 🚨 주의사항 및 모범 사례
 
@@ -534,14 +499,6 @@ git checkout -- filename
 ### 개발 도구
 - [VS Code](https://code.visualstudio.com/)
 - [Cursor](https://cursor.sh/)
-
----
-
-## 📝 업데이트 로그
-
-| 날짜 | 업데이트 내용 | 작성자 |
-|------|---------------|--------|
-| 2024-01-XX | 초기 프로젝트 가이드 작성 | - |
 
 ---
 
