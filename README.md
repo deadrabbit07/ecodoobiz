@@ -19,7 +19,7 @@
 
 ## 🚀 프로젝트 시작하기
 
-```bash
+
 # 저장소 클론
 git clone [저장소URL] ecodoobiz
 cd ecodoobiz
@@ -35,7 +35,7 @@ git push -u origin [본인이름]
 
 문서 순서: 목차 → 설명 → 예시 → 참고자료
 
-🧭 GitHub 명령어 가이드
+## 🧭 GitHub 명령어 가이드
 🔧 기본 설정
 bash
 코드 복사
