@@ -1,4 +1,4 @@
-# Odoo 학습 전용 AI 프롬프트 (Study-Focused AI Prompt)
+# Odoo 학습 전용 AI 프롬프트 
 
 ## 💡 핵심 정의 및 목표
 
