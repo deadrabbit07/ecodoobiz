@@ -1,0 +1,123 @@
+# Vim 연습용 더미 코드
+# 주석에 연습 포인트를 표시했습니다
+
+# 1. 함수 정의 연습
+def practice_function():
+    # dd로 줄 삭제 연습
+    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
+    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
+    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
+    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
+    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
+    result = []  # p로 붙여넣기 연습
+    result = []  # p로 붙여넣기 연습
+    result = []  # p로 붙여넣기 연습
+    for n in numbers:  # w, e, b로 단어 이동 연습
+    for n in numbers:  # w, e, b로 단어 이동 연습
+    for n in numbers:  # w, e, b로 단어 이동 연습
+    for n in numbers:  # w, e, b로 단어 이동 연습
+        if n % 2 == 0:  # 검색 /? /n 연습
+            result.append(n * 3)  # i로 수정 연습
+        else:
+            result.append(n + 1)  # cc로 줄 변경 연습
+    return result  # 0, $로 줄 맨 앞/뒤 이동 연습
+
+# 2. 클래스 정의 연습
+class PracticeClass:
+    def __init__(self, name):
+        self.name = name  # 들여쓰기 연습 >> <<
+        self.items = []  # Shift+V로 줄 선택 후 이동
+
+    def add_item(self, item):
+        self.items.append(item)  # yyp로 줄 복사/붙여넣기
+        self.items.append(item)  # yyp로 줄 복사/붙여넣기
+        self.items.append(item)  # yyp로 줄 복사/붙여넣기
+        self.items.append(item)  # yyp로 줄 복사/붙여넣기
+        self.items.append(item)  # yyp로 줄 복사/붙여넣기
+
+    def show_items(self):
+        for item in self.items:  # j/k로 이동
+            print(f"Item: {item}")  # /Item 검색 후 n으로 이동 연습
+
+# 3. 반복문 연습
+def loop_example():
+    for i in range(3):  # 단어 이동 w/e/b 연습
+        for j in range(2):
+            print(f"i={i}, j={j}")  # dd로 삭제, p로 붙여넣기
+        print("Inner loop finished")  # Shift+V로 줄 선택 후 이동
+
+# 4. 조건문 연습
+def condition_example(x):
+    if x > 0:
+        print("Positive")  # i로 편집 연습
+    elif x == 0:
+        print("Zero")  # cc로 줄 변경 연습
+    else:
+        print("Negative")  # yy로 복사, p로 붙여넣기
+
+# 5. 문자열 & 리스트 연습
+def string_list_example():
+    fruits = ["apple", "banana", "cherry"]  # /apple 검색 연습
+    vegetables = ["carrot", "broccoli", "spinach"]
+    combined = fruits + vegetables  # >>/<< 들여쓰기 연습
+    for item in combined:
+        print(item.upper())  # Ctrl+r로 Redo, u로 Undo
+        print(item.lower())  # yyp로 줄 복사/붙여넣기
+
+# 6. 사전(Dictionary) 연습
+def dict_example():
+    info = {"name": "Alice", "age": 30, "city": "Seoul"}  # /Alice 검색
+    for key, value in info.items():
+        print(f"{key}: {value}")  # /key 검색, n으로 이동
+
+# 7. 계산 연습
+def calc_example():
+    a = 10
+    b = 20
+    c = a + b
+    d = a * b
+    e = b - a
+    f = b / a
+    g = a ** 2
+    h = b % 3
+    return c, d, e, f, g, h  # 0, $로 이동, cc로 줄 변경 연습
+
+# 8. while 반복문 연습
+def while_example():
+    count = 0
+    while count < 3:
+        print(f"Count: {count}")  # yy, p로 복사 붙여넣기
+        count += 1  # i로 수정 연습
+
+# 9. 중첩 반복문 연습
+def nested_loop():
+    for x in range(2):
+        for y in range(2):
+            for z in range(2):
+                print(x, y, z)  # Shift+V로 줄 선택 후 이동 연습
+
+# 10. 불리언 연습
+def boolean_example(flag):
+    if flag and not flag:
+        print("Impossible")  # dd, p 연습
+    elif flag or not flag:
+        print("Always True")  # /True 검색 연습
+
+# 11. 함수 호출 연습
+def main():
+    print(practice_function())  # 커서 이동 w/e/b 연습
+    obj = PracticeClass("Test")
+    obj.add_item("Item1")
+    obj.show_items()
+    loop_example()
+    condition_example(5)
+    string_list_example()
+    dict_example()
+    calc_example()
+    while_example()
+    nested_loop()
+    boolean_example(True)
+
+# 프로그램 시작점
+if __name__ == "__main__":
+    main()  # $로 이동, i로 수정, dd/p 연습
