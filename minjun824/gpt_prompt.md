@@ -17,7 +17,7 @@
 | 목표 | 백엔드 + 프론트엔드를 모두 이해하는 풀스택 Odoo 개발자 |
 | 배경 | 이전 Unity 게임 개발 경험, 프로그래밍 감각 보유, 백엔드 구조 및 서버 로직 초급 |
 | OS | macOS 26.0.1 |
-| Python | 3.10 ~ 3.11 |
+| Python | 3.11.13 |
 | Framework | Odoo v18 |
 | Database | PostgreSQL 16 |
 | IDE | PyCharm, VSCode, vi |
