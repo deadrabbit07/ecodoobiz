@@ -82,6 +82,7 @@ class CustomModel(models.Model):
                 # 검색 결과가 있다면 (중복이 발견되면)
                 raise ValidationError("이미 존재하는 이름입니다.") 
                 # ValidationError 발생: Odoo는 이 메시지를 UI에 깔끔하게 표시하고 트랜잭션을 롤백함.
+```
 4.  **심층 학습 가이드 (Deep Dive)**
     
     이 코드를 통해 Odoo와 Python의 더 깊은 작동 방식을 이해해 봅시다.
