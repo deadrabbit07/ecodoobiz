@@ -5,19 +5,10 @@
 def practice_function():
     # dd로 줄 삭제 연습
     numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
-    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
-    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
-    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
-    numbers = [1, 2, 3, 4, 5]  # yy로 복사 후 붙여넣기 연습
     result = []  # p로 붙여넣기 연습
-    result = []  # p로 붙여넣기 연습
-    result = []  # p로 붙여넣기 연습
-    for n in numbers:  # w, e, b로 단어 이동 연습
-    for n in numbers:  # w, e, b로 단어 이동 연습
-    for n in numbers:  # w, e, b로 단어 이동 연습
     for n in numbers:  # w, e, b로 단어 이동 연습
         if n % 2 == 0:  # 검색 /? /n 연습
-            result.append(n * 3)  # i로 수정 연습
+            result.append(n * 2)  # i로 수정 연습
         else:
             result.append(n + 1)  # cc로 줄 변경 연습
     return result  # 0, $로 줄 맨 앞/뒤 이동 연습
@@ -29,10 +20,6 @@ class PracticeClass:
         self.items = []  # Shift+V로 줄 선택 후 이동
 
     def add_item(self, item):
-        self.items.append(item)  # yyp로 줄 복사/붙여넣기
-        self.items.append(item)  # yyp로 줄 복사/붙여넣기
-        self.items.append(item)  # yyp로 줄 복사/붙여넣기
-        self.items.append(item)  # yyp로 줄 복사/붙여넣기
         self.items.append(item)  # yyp로 줄 복사/붙여넣기
 
     def show_items(self):
@@ -51,7 +38,7 @@ def condition_example(x):
     if x > 0:
         print("Positive")  # i로 편집 연습
     elif x == 0:
-        print("Zero")  # cc로 줄 변경 연습
+        print("Zero")  # cc로 줄 전체 변경
     else:
         print("Negative")  # yy로 복사, p로 붙여넣기
 
