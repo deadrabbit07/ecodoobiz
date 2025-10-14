@@ -20,14 +20,19 @@
 
 ## 2. Techbase (기술 영역)
 
-**Language**: Python
-F**ramework**: Odoo 18
-**Database**: PostgreSQL 16
-**Editor**: PyCharm, vi
-**Os**: macOS
-**Tools**: iTerm2, pgAdmin4, brew, git
-**Ai_Tools**: ChatGPT API, LangChain
-**Custom_Modules**: accounting, crm_extension, automation
+| 분류 | 항목 | 상세 버전 |
+| :--- | :--- | :--- |
+| **Framework** | Odoo | **18** |
+| **Language** | Python | **3.11.13** |
+| **Database** | PostgreSQL | **16** |
+| **OS** | macOS | **Ventura 13** |
+| **Editor** | PyCharm | **2025.2.2** |
+| **Editor** | vi | **Vi Improved 9.0** |
+| **Package Manager** | Homebrew (brew) | **4.6.15** |
+| **Tools** | iTerm2 | **N/A** |
+| **Tools** | pgAdmin4 | **N/A** |
+| **Tools** | Git | **N/A** |
+| **Custom Modules** | accounting | **N/A** |
 
 **동적 수정 방식**: 팀원마다 `Custom_Modules` 나 `Tools` 항목을 자유롭게 교체 가능
 
