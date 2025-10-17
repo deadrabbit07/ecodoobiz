@@ -68,8 +68,6 @@ def calc_example():
     g = a ** 2
     h = b % 3
     return c, d, e, f, g, h  # 0, $로 이동, cc로 줄 변경 연습
-
-# 8. while 반복문 연습
 def while_example():
     count = 0
     while count < 3:
@@ -108,3 +106,5 @@ def main():
 # 프로그램 시작점
 if __name__ == "__main__":
     main()  # $로 이동, i로 수정, dd/p 연습
+
+123123123123
