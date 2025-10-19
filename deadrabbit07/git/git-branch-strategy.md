@@ -19,7 +19,7 @@ Git Flow는 **브랜치를 세분화해서 체계적으로 관리**하는 전략
 
 ### 🔸 전체 과정 예시
 
-![Git Flow 전체 과정](./img/git-flow.png)
+![Git Flow 전체 과정](../img/git-flow.png)
 
 1. `develop` 브랜치에서 `feature` 브랜치를 만들어 기능 개발  
 2. 개발 완료 후 `develop`에 병합  
@@ -45,7 +45,7 @@ Git Flow는 **브랜치를 세분화해서 체계적으로 관리**하는 전략
 Trunk-Based는 **하나의 main 브랜치(Trunk)** 중심으로 빠르게 개발하는 전략이다.  
 대부분의 작업은 짧은 수명의 브랜치로 수행되고, 바로 main에 병합한다.
 
-![Trunk-Based 예시](./img/Trunk-based.png)
+![Trunk-Based 예시](../img/Trunk-based.png)
 
 ### 🔹 특징
 - `main` 브랜치 하나를 중심으로 운영  
