@@ -144,6 +144,52 @@ python easyocr_solution.py
 
 ---
 
+## 5. 결과
+
+### 코드 (`results_hybrid_easyocr.csv`) 
+
+```python
+filename,x,y,w,h,text
+image.jpeg,1404,2513,59,40,978(
+image.jpeg,767,2508,87,51,B1545
+image.jpeg,969,2505,86,51,B1153
+image.jpeg,1168,2504,88,51,141812
+image.jpeg,1979,2501,92,52,B1036
+image.jpeg,1775,2501,90,52,B1528
+image.jpeg,570,2307,87,50,6763
+image.jpeg,773,2304,86,50,B1977
+image.jpeg,970,2302,88,50,B10455
+image.jpeg,1170,2300,87,50,BJ987
+image.jpeg,1569,2297,88,50,E19631
+image.jpeg,1974,2295,91,50,B1165
+image.jpeg,1771,2295,88,50,B1472
+image.jpeg,575,2107,86,50,J(ESQ
+image.jpeg,774,2105,86,50,B117.4
+image.jpeg,975,2103,85,49,B1LLQ
+image.jpeg,1171,2101,86,49,"B,1966"
+image.jpeg,1368,2097,87,49,JB198G
+image.jpeg,1566,2096,88,49,E1992
+image.jpeg,1767,2095,88,50,B198
+image.jpeg,1969,2093,89,50,"B147,9"
+image.jpeg,2171,2091,76,50,10198
+image.jpeg,774,1908,87,49,B1198
+image.jpeg,972,1906,87,49,B1159
+image.jpeg,1170,1904,86,49,31523
+image.jpeg,1367,1901,86,49,B1982
+image.jpeg,1564,1898,87,49,B1196
+image.jpeg,1763,1896,88,50,"B117,9"
+image.jpeg,1965,1893,88,50,B1186
+image.jpeg,577,1714,86,48,B1018
+image.jpeg,775,1711,86,48,"B'15,8"
+image.jpeg,972,1710,86,48,'B1487
+image.jpeg,1169,1708,87,48,81993
+image.jpeg,1365,1704,86,49,B199
+image.jpeg,1562,1702,86,48,BI490
+image.jpeg,1761,1697,87,49,B1156
+image.jpeg,1962,1694,88,49,B1416
+```
+---
+
 **✅ 요약:**  
 본 하이브리드 솔루션은 OpenCV의 안정적인 금속판 탐지와 EasyOCR의 고정밀 인식 능력을 결합하여,  
 복잡한 환경에서도 높은 OCR 신뢰도를 달성합니다.
